@@ -1491,7 +1491,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &590906991
 Transform:
   m_ObjectHideFlags: 0
@@ -2897,8 +2897,8 @@ MonoBehaviour:
       Rotation:
         value:
           x: -0.008430004
-          y: -1.421136e-14
-          z: -0.000045930785
+          y: 2.842272e-14
+          z: -0.000045943427
           w: 0.9999645
     m_MetaData:
     - Mode: 2
