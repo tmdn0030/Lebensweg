@@ -28,7 +28,7 @@ Material:
   - TransparentDepthPostpass
   - TransparentBackface
   - RayTracingPrepass
-  m_LockedProperties: 
+  m_LockedProperties: _NoiseScaleSmall
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
@@ -187,6 +187,7 @@ Material:
     - _ATDistance: 1
     - _AddPrecomputedVelocity: 0
     - _AlbedoAffectEmissive: 0
+    - _Alpha: 1
     - _AlphaClip: 0
     - _AlphaCutoff: 0.5
     - _AlphaCutoffEnable: 0
@@ -338,7 +339,7 @@ Material:
     - _ZWrite: 1
     - _noise_scale: 23.11
     m_Colors:
-    - _BaseColor: {r: 0.7372549, g: 0.7372549, b: 0.7372549, a: 1}
+    - _BaseColor: {r: 0.737255, g: 0.737255, b: 0.737255, a: 1}
     - _Color: {r: 0.737255, g: 0.737255, b: 0.737255, a: 1}
     - _ColorVariation1: {r: 0.9490196, g: 0.9490196, b: 0.7611137, a: 1}
     - _ColorVariation2: {r: 0.94509804, g: 0.80301833, b: 0.75135297, a: 1}
