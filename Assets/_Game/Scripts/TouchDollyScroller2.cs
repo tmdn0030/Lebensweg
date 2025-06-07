@@ -8,6 +8,7 @@ public class TouchDollyScroller2 : MonoBehaviour
     public float scrollSpeedMetersPerPixel = 0.01f;
     public float smoothTime = 0.2f;
     public float lookSpeed = 0.1f;
+    public float rotationDamping = 0.1f;
 
     private CinemachineSplineDolly splineDolly;
     private float targetDistance;
@@ -20,33 +21,30 @@ public class TouchDollyScroller2 : MonoBehaviour
     private bool isScrolling;
     private bool isLooking;
 
-    private Quaternion targetRotation;
-    private Quaternion startRotation;
+    private YawOverrideExtension yawExtension;
+
+    private float yawAmount = 0f;
 
     void Start()
     {
         splineDolly = cineCam.GetComponent<CinemachineSplineDolly>();
-
         targetDistance = currentDistance = splineDolly.CameraPosition;
 
-        targetRotation = startRotation = cineCam.transform.rotation;
+        yawExtension = cineCam.GetComponent<YawOverrideExtension>();
+        if (yawExtension == null)
+        {
+            yawExtension = cineCam.gameObject.AddComponent<YawOverrideExtension>();
+        }
     }
 
     void Update()
     {
         HandleInput();
 
-        // Smooth Dolly-Position
         currentDistance = Mathf.SmoothDamp(currentDistance, targetDistance, ref velocity, smoothTime);
         float maxDistance = splineDolly.Spline?.Spline?.GetLength() ?? 0f;
         currentDistance = Mathf.Clamp(currentDistance, 0, maxDistance);
         splineDolly.CameraPosition = currentDistance;
-    }
-
-    void LateUpdate()
-    {
-        // Wende Rotation nach Cinemachine an
-        cineCam.transform.rotation = Quaternion.Slerp(cineCam.transform.rotation, targetRotation, Time.deltaTime * 10f);
     }
 
     void HandleInput()
@@ -56,7 +54,6 @@ public class TouchDollyScroller2 : MonoBehaviour
         bool touched = Touchscreen.current != null && Touchscreen.current.primaryTouch.press.isPressed;
         int touchCount = Touchscreen.current != null ? Touchscreen.current.touches.Count : 0;
 
-        // Scrollen
         if ((leftPressed || (touched && touchCount == 1)) && !rightPressed)
         {
             Vector2 currentPos = leftPressed ? Mouse.current.position.ReadValue() : Touchscreen.current.primaryTouch.position.ReadValue();
@@ -78,7 +75,6 @@ public class TouchDollyScroller2 : MonoBehaviour
             isScrolling = false;
         }
 
-        // Umschauen
         if (rightPressed || (touched && touchCount >= 2))
         {
             Vector2 lookPos = rightPressed
@@ -99,11 +95,17 @@ public class TouchDollyScroller2 : MonoBehaviour
         }
         else
         {
-            if (isLooking)
-            {
-                targetRotation = startRotation;  // Sanft zurück zur Originalrotation
-            }
             isLooking = false;
+        }
+
+        if (!isLooking)
+        {
+            yawAmount = Mathf.Lerp(yawAmount, 0f, Time.deltaTime * 5f);
+        }
+
+        if (yawExtension != null)
+        {
+            yawExtension.yawOverride = yawAmount;
         }
     }
 
@@ -118,12 +120,16 @@ public class TouchDollyScroller2 : MonoBehaviour
 
     void ApplyLook(Vector2 delta)
     {
-        float yaw = delta.x * lookSpeed;
-        float pitch = -delta.y * lookSpeed;
+        float rawYawDelta = delta.x * lookSpeed;
 
-        // Wende Rotation im Weltkoordinatensystem an
-        Quaternion lookRot = Quaternion.Euler(pitch, yaw, 0);
-        targetRotation = Quaternion.Euler(0, 0, 0); // Reset Roll
-        targetRotation = targetRotation * lookRot * cineCam.transform.rotation;
+        float dampFactor = 1f / (1f + Mathf.Abs(yawAmount) * rotationDamping);
+        float adjustedYawDelta = rawYawDelta * dampFactor;
+
+        yawAmount += adjustedYawDelta;
+
+        if (yawExtension != null)
+        {
+            yawAmount = Mathf.Clamp(yawAmount, yawExtension.minYawLimit, yawExtension.maxYawLimit);
+        }
     }
 }
