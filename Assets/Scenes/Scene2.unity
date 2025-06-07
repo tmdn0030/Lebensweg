@@ -6388,6 +6388,7 @@ MonoBehaviour:
   scrollSpeedMetersPerPixel: 0.01
   smoothTime: 0.2
   lookSpeed: 0.1
+  rotationDamping: 1
 --- !u!114 &203737589
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7626,7 +7627,7 @@ MonoBehaviour:
     Position: 0
     Units: 0
   SplineOffset: {x: 0, y: 0, z: 0}
-  CameraRotation: 0
+  CameraRotation: 1
   Damping:
     Enabled: 0
     Position: {x: 0, y: 0, z: 0}
@@ -7651,7 +7652,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 453898845}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.020731995, y: -0.027378716, z: -0.00056795054, w: 0.99941}
+  m_LocalRotation: {x: -0.020814214, y: -0.02777932, z: -0.008807483, w: 0.9993586}
   m_LocalPosition: {x: -2.65, y: 1.07, z: -0.28}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -7918,14 +7919,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 453898845}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 68bb026fafb42b14791938953eaace77, type: 3}
+  m_Script: {fileID: 11500000, guid: f8f3e3b828bf50a47a064a4f8729f74c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NoiseProfile: {fileID: 11400000, guid: 46965f9cbaf525742a6da4c2172a99cd, type: 2}
-  PivotOffset: {x: 0, y: 0, z: 0}
-  AmplitudeGain: 1
-  FrequencyGain: 1
-  m_NoiseOffsets: {x: 152.18054, y: -866.5819, z: 56.837433}
+  amplitude: 5
+  frequency: 0.2
 --- !u!1 &498626815
 GameObject:
   m_ObjectHideFlags: 0
@@ -9617,7 +9615,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 907334442}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.020731995, y: -0.027378712, z: -0.0005679505, w: 0.99941}
+  m_LocalRotation: {x: -0.020814214, y: -0.02777932, z: -0.008807483, w: 0.9993586}
   m_LocalPosition: {x: -2.65, y: 1.07, z: -0.28}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0

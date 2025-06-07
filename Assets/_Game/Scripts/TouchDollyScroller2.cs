@@ -8,6 +8,8 @@ public class TouchDollyScroller2 : MonoBehaviour
     public float scrollSpeedMetersPerPixel = 0.01f;
     public float smoothTime = 0.2f;
     public float lookSpeed = 0.1f;
+
+    [Tooltip("Je höher, desto stärker wird die Rotation gedämpft (Hyperbel-Dämpfung).")]
     public float rotationDamping = 0.1f;
 
     private CinemachineSplineDolly splineDolly;
@@ -22,8 +24,9 @@ public class TouchDollyScroller2 : MonoBehaviour
     private bool isLooking;
 
     private YawOverrideExtension yawExtension;
-
     private float yawAmount = 0f;
+
+    private CinemachineBasicMultiChannelPerlin shakePerlin;
 
     void Start()
     {
@@ -35,17 +38,26 @@ public class TouchDollyScroller2 : MonoBehaviour
         {
             yawExtension = cineCam.gameObject.AddComponent<YawOverrideExtension>();
         }
+
+        shakePerlin = cineCam.GetComponentInChildren<CinemachineBasicMultiChannelPerlin>();
     }
 
-    void Update()
+ void Update()
+{
+    HandleInput();
+
+    if (shakePerlin != null)
     {
-        HandleInput();
-
-        currentDistance = Mathf.SmoothDamp(currentDistance, targetDistance, ref velocity, smoothTime);
-        float maxDistance = splineDolly.Spline?.Spline?.GetLength() ?? 0f;
-        currentDistance = Mathf.Clamp(currentDistance, 0, maxDistance);
-        splineDolly.CameraPosition = currentDistance;
+        // Shake nur wenn keine Eingabe aktiv ist
+        shakePerlin.AmplitudeGain = (isScrolling || isLooking) ? 0f : 1f;
     }
+
+    currentDistance = Mathf.SmoothDamp(currentDistance, targetDistance, ref velocity, smoothTime);
+    float maxDistance = splineDolly.Spline?.Spline?.GetLength() ?? 0f;
+    currentDistance = Mathf.Clamp(currentDistance, 0, maxDistance);
+    splineDolly.CameraPosition = currentDistance;
+}
+
 
     void HandleInput()
     {
@@ -122,6 +134,7 @@ public class TouchDollyScroller2 : MonoBehaviour
     {
         float rawYawDelta = delta.x * lookSpeed;
 
+        // Hyperbelartige Dämpfung, jetzt mit einstellbarem Dämpfungsfaktor
         float dampFactor = 1f / (1f + Mathf.Abs(yawAmount) * rotationDamping);
         float adjustedYawDelta = rawYawDelta * dampFactor;
 
