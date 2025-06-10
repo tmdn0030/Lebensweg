@@ -6438,7 +6438,7 @@ MonoBehaviour:
   scrollSpeedMetersPerPixel: 0.01
   smoothTime: 0.2
   lookSpeed: 0.1
-  rotationDamping: 0.1
+  rotationDamping: 1
 --- !u!114 &203737589
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7656,6 +7656,7 @@ GameObject:
   - component: {fileID: 453898851}
   - component: {fileID: 453898853}
   - component: {fileID: 453898854}
+  - component: {fileID: 453898856}
   m_Layer: 0
   m_Name: CinemachineCamera
   m_TagString: MainCamera
@@ -8023,6 +8024,20 @@ MonoBehaviour:
   AmplitudeGain: 1
   FrequencyGain: 1
   m_NoiseOffsets: {x: 152.18054, y: -866.5819, z: 56.837433}
+--- !u!114 &453898856
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 453898845}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8f3e3b828bf50a47a064a4f8729f74c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amplitude: 5
+  frequency: 0.2
 --- !u!1 &498626815
 GameObject:
   m_ObjectHideFlags: 0
