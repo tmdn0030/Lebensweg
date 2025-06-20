@@ -6,6 +6,7 @@ TagManager:
   tags:
   - DynRot
   - FollowCam
+  - Tracker
   layers:
   - Default
   - TransparentFX

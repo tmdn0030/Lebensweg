@@ -3,7 +3,7 @@ using Unity.Cinemachine;
 
 [ExecuteAlways]
 [SaveDuringPlay]
-[AddComponentMenu("")] // unsichtbar im AddComponent-Menü
+[AddComponentMenu("")]
 public class YawOverrideExtension : CinemachineExtension
 {
     [Tooltip("Yaw Override in Grad relativ zur Spline-Rotation")]
@@ -23,9 +23,7 @@ public class YawOverrideExtension : CinemachineExtension
     {
         if (stage == CinemachineCore.Stage.Finalize)
         {
-            // Clamp den yawOverride innerhalb der Limits
             float clampedYaw = Mathf.Clamp(yawOverride, minYawLimit, maxYawLimit);
-
             var rot = state.RawOrientation.eulerAngles;
             rot.y += clampedYaw;
             state.RawOrientation = Quaternion.Euler(rot);
