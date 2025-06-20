@@ -1,135 +1,73 @@
-﻿using System;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Unity.Cinemachine;
 
-[ExecuteAlways]
 public class LightSplineController : MonoBehaviour
 {
-    [Header("References")]
-    public CinemachineCamera cinemachineCamera;
-    public List<LightEvent> lightEvents = new();
+    [System.Serializable]
+    public class LightSettings
+    {
+        public Light light; // Die Lichtquelle
+        public float triggerDistance = 10f; // Die Distanz auf der Spline, ab der das Licht aktiviert wird
+        public float radius = 5f; // Der Radius, innerhalb dessen die Intensität verändert wird
+        public float maxIntensity = 1f; // Maximale Intensität des Lichts
+        [HideInInspector] public float currentIntensity = 0f; // Aktuelle Intensität des Lichts
+    }
 
-    private float initialLightIntensity;
+    [Header("Lichtquellen Einstellungen")]
+    public List<LightSettings> lightSettingsList = new List<LightSettings>(); // Liste der Lichtquellen mit ihren Einstellungen
+
+    [Header("Kamera und Bewegung")]
+    public ScrollController scrollController; // Referenz zum ScrollController (oder eine andere Klasse, die die Entfernung verwaltet)
 
     void Start()
     {
-        CacheInitialIntensity();
+        // Überprüfen, ob die Liste der Lichter leer ist
+        if (lightSettingsList.Count == 0)
+        {
+            Debug.LogWarning("Keine Lichtquellen in der Liste gefunden.");
+        }
     }
-
-    private Dictionary<Light, LightEvent> activeEvents = new();
 
     void Update()
     {
-        if (cinemachineCamera == null || lightEvents.Count == 0) return;
-
-        var dolly = cinemachineCamera.GetComponent<CinemachineSplineDolly>();
-        if (dolly == null || !dolly.IsValid) return;
-
-        float camDistance = dolly.CameraPosition;
-
-        // Gruppiere Events nach Light
-        Dictionary<Light, List<LightEvent>> groupedEvents = new();
-
-        foreach (var e in lightEvents)
+        if (scrollController == null)
         {
-            if (e.directionalLight == null) continue;
-
-            if (!groupedEvents.ContainsKey(e.directionalLight))
-                groupedEvents[e.directionalLight] = new List<LightEvent>();
-
-            groupedEvents[e.directionalLight].Add(e);
-        }
-
-        // Verarbeite jedes Light einzeln
-        foreach (var kvp in groupedEvents)
-        {
-            Light light = kvp.Key;
-            List<LightEvent> events = kvp.Value;
-            events.Sort((a, b) => a.triggerDistance.CompareTo(b.triggerDistance));
-
-            LightEvent from = null;
-            LightEvent to = null;
-
-            for (int i = 0; i < events.Count; i++)
-            {
-                float start = events[i].triggerDistance;
-                float end = start + events[i].revealRadius;
-
-                if (camDistance < start)
-                {
-                    to = events[i];
-                    from = i > 0 ? events[i - 1] : null;
-                    break;
-                }
-                else if (camDistance >= start && camDistance <= end)
-                {
-                    to = events[i];
-                    from = i > 0 ? events[i - 1] : null;
-                    float t = Mathf.InverseLerp(start, end, camDistance);
-                    float fromVal = from != null ? from.targetIntensity : to.initialIntensity;
-                    float targetVal = Mathf.Lerp(fromVal, to.targetIntensity, t);
-                    light.intensity = targetVal;
-                    goto NextLight;
-                }
-            }
-
-            // Wenn kein aktives Event-Bereich gefunden wurde:
-            if (camDistance < events[0].triggerDistance)
-            {
-                light.intensity = events[0].initialIntensity;
-            }
-            else
-            {
-                // Nach letztem Event → Zielwert beibehalten
-                light.intensity = events[events.Count - 1].targetIntensity;
-            }
-
-        NextLight: continue;
-        }
-    }
-
-
-
-    void CacheInitialIntensity()
-    {
-        foreach (var e in lightEvents)
-        {
-            if (e.directionalLight != null)
-                e.initialIntensity = e.directionalLight.intensity;
-        }
-    }
-
-    void ApplyLightEvent(LightEvent e)
-    {
-        if (e.directionalLight != null && e.directionalLight.type == LightType.Directional)
-            e.directionalLight.intensity = e.targetIntensity;
-    }
-
-    void ApplyLightBlend(LightEvent from, LightEvent to, float t)
-    {
-        if (to.directionalLight == null || to.directionalLight.type != LightType.Directional)
+            Debug.LogError("ScrollController wurde nicht gesetzt!");
             return;
+        }
 
-        float fromIntensity = from != null ? from.targetIntensity : to.initialIntensity;
-        to.directionalLight.intensity = Mathf.Lerp(fromIntensity, to.targetIntensity, t);
+        // Die aktuelle Entfernung aus dem ScrollController holen (wir nutzen hier die virtuelle Entfernung)
+        float currentDistance = scrollController.virtualDistance;
+
+        // Für jede Lichtquelle prüfen, ob sie aktiviert werden soll und die Intensität anpassen
+        foreach (var lightSetting in lightSettingsList)
+        {
+            AdjustLightIntensity(lightSetting, currentDistance);
+        }
     }
 
-    [Serializable]
-    public class LightEvent
+    void AdjustLightIntensity(LightSettings lightSetting, float currentDistance)
     {
-        [Tooltip("Spline distance where light starts transitioning.")]
-        public float triggerDistance;
+        // Berechne die Distanz zur Trigger-Schwelle
+        float distanceToTrigger = Mathf.Abs(currentDistance - lightSetting.triggerDistance);
 
-        [Tooltip("Blend distance in meters.")]
-        public float revealRadius = 5f;
+        // Wenn die aktuelle Distanz innerhalb des Radius ist, beeinflusse die Intensität
+        if (distanceToTrigger <= lightSetting.radius)
+        {
+            // Berechne den Intensitätsfaktor, wobei die Mitte des Radius die höchste Intensität hat
+            float intensityFactor = 1f - (distanceToTrigger / lightSetting.radius);
+            
+            // Sanfte Interpolation nach oben bis zur maximalen Intensität
+            lightSetting.currentIntensity = Mathf.Lerp(lightSetting.currentIntensity, lightSetting.maxIntensity * intensityFactor, Time.deltaTime * 5f);
+        }
+        else
+        {
+            // Wenn die Distanz außerhalb des Radius ist, verringere die Intensität sanft
+            lightSetting.currentIntensity = Mathf.Lerp(lightSetting.currentIntensity, 0f, Time.deltaTime * 5f);
+        }
 
-        public Light directionalLight;
-
-        [Tooltip("Target intensity for the directional light.")]
-        public float targetIntensity = 1f;
-
-        [HideInInspector]
-        public float initialIntensity;
+        // Setze die Intensität des Lichts auf den berechneten Wert
+        lightSetting.light.intensity = lightSetting.currentIntensity;
     }
 }

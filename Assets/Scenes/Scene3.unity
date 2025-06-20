@@ -6428,18 +6428,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df47dce93dba2204ca08a6605dfb9f44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cinemachineCamera: {fileID: 453898846}
-  lightEvents:
-  - triggerDistance: 43
-    revealRadius: 5
-    directionalLight: {fileID: 410087040}
-    targetIntensity: 0
-    initialIntensity: 0
-  - triggerDistance: 57.6
-    revealRadius: 5
-    directionalLight: {fileID: 2100370999}
-    targetIntensity: 3000
-    initialIntensity: 3000
+  lightSettingsList:
+  - light: {fileID: 410087040}
+    triggerDistance: 26.74
+    radius: 5
+    maxIntensity: 62000
+    currentIntensity: 0
+  scrollController: {fileID: 2071564856}
 --- !u!1 &214971013
 GameObject:
   m_ObjectHideFlags: 0
@@ -7399,7 +7394,7 @@ Transform:
   m_GameObject: {fileID: 410087039}
   serializedVersion: 2
   m_LocalRotation: {x: -0.01809966, y: 0.97642225, z: -0.19510835, w: -0.09057999}
-  m_LocalPosition: {x: 0, y: 3, z: 0}
+  m_LocalPosition: {x: -2.93, y: 2.57, z: 8.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -15592,7 +15587,7 @@ Light:
   serializedVersion: 11
   m_Type: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 3000
+  m_Intensity: 0
   m_Range: 64
   m_SpotAngle: 78.2641
   m_InnerSpotAngle: 21.80208
@@ -16680,11 +16675,12 @@ SceneRoots:
   m_Roots:
   - {fileID: 453898849}
   - {fileID: 1113060109}
-  - {fileID: 410087041}
   - {fileID: 832575519}
   - {fileID: 1615264064}
   - {fileID: 1770229514}
   - {fileID: 522932513}
+  - {fileID: 410087041}
+  - {fileID: 2100371000}
   - {fileID: 907334446}
   - {fileID: 794383829}
   - {fileID: 2071564857}
@@ -16739,6 +16735,5 @@ SceneRoots:
   - {fileID: 54509840}
   - {fileID: 1476199543}
   - {fileID: 1550697115}
-  - {fileID: 2100371000}
   - {fileID: 1457785181}
   - {fileID: 766227210}
