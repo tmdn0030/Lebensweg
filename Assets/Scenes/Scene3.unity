@@ -8584,7 +8584,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d480dd16fe33694395cb90486bc978f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scroller: {fileID: 453898856}
+  scroller: {fileID: 0}
   originAnchor: {fileID: 344334276}
   relativeTriggerDistance: 10
   revealRadius: 20
@@ -12740,7 +12740,10 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: d93f6a3695b81914f8f4730c425c2b79, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 0dcfc8c68bcdb6946ab08c379712875d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1506803028}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 0dcfc8c68bcdb6946ab08c379712875d, type: 3}
       insertIndex: -1
@@ -12748,6 +12751,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 0dcfc8c68bcdb6946ab08c379712875d, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2083163771}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 0dcfc8c68bcdb6946ab08c379712875d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2083163773}
     - targetCorrespondingSourceObject: {fileID: 2314673734116783334, guid: 0dcfc8c68bcdb6946ab08c379712875d, type: 3}
       insertIndex: -1
       addedObject: {fileID: 172639729}
@@ -13381,6 +13387,54 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1493062993}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1506803027
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1506803028}
+  - component: {fileID: 1506803029}
+  m_Layer: 0
+  m_Name: Anchor_Geschwister
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1506803028
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1506803027}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.4, y: 0, z: 7.93}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 99737942}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1506803029
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1506803027}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2860b1b3555a3c746960226a50ff7e9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  splineContainer: {fileID: 1113060108}
+  distanceOnSpline: 64.75543
+  tOnSpline: 0.3252177
+  closestPoint: {x: 10.518741, y: 6.1922975, z: 61.19003}
 --- !u!1 &1514263846
 GameObject:
   m_ObjectHideFlags: 0
@@ -15333,14 +15387,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cineCam: {fileID: 453898846}
-  scrollSpeedMetersPerPixel: 0.2
+  scrollSpeedMetersPerPixel: 0.1
   lookSpeed: 0.1
   rotationDamping: 0.1
   speedManager: {fileID: 2071564859}
   zoomedFOV: 30
   zoomDuration: 1.5
   zoomSpeed: 5
-  doubleClickThreshold: 0.1
+  doubleClickThreshold: 0.3
   invertScroll: 0
   blockEndOffset: 0
   showDebugGUI: 1
@@ -15385,7 +15439,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2083163770}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3d4b650dee9d6a04c95ecd30a570caaf, type: 3}
   m_Name: 
@@ -15416,6 +15470,23 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &2083163773
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2083163770}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d480dd16fe33694395cb90486bc978f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scroller: {fileID: 2071564856}
+  originAnchor: {fileID: 1506803029}
+  relativeTriggerDistance: 61
+  revealRadius: 5
+  animationStateName: Scene
 --- !u!1 &2100370997
 GameObject:
   m_ObjectHideFlags: 0
