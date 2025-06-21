@@ -8584,7 +8584,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d480dd16fe33694395cb90486bc978f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scroller: {fileID: 0}
+  scroller: {fileID: 2071564856}
   originAnchor: {fileID: 344334276}
   relativeTriggerDistance: 10
   revealRadius: 20
@@ -13445,6 +13445,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1514263848}
   - component: {fileID: 1514263847}
+  - component: {fileID: 1514263849}
   m_Layer: 0
   m_Name: TriggerSystem
   m_TagString: Untagged
@@ -13459,7 +13460,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1514263846}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c54eaa632b67df94ba67e19ec1f00d07, type: 3}
   m_Name: 
@@ -13480,6 +13481,43 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1514263849
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1514263846}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9dee964a9d88154196e1483ed78af10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scrollController: {fileID: 2071564856}
+  splineContainer: {fileID: 1113060108}
+  events:
+  - eventName: Dissolve
+    triggerDistance: 12.4
+    triggerRadius: 0.63
+    triggerOnce: 0
+    onTriggered:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 0}
+          m_TargetAssemblyTypeName: 
+          m_MethodName: 
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: 
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    animationClip: {fileID: 7400000, guid: ae8cea1be8b89c341b91359792187e2d, type: 2}
+    targetAnimator: {fileID: 8703923443943841427}
+    hasFired: 0
 --- !u!1 &1550697114
 GameObject:
   m_ObjectHideFlags: 0
@@ -16055,6 +16093,7 @@ GameObject:
   - component: {fileID: 3960970095900705715}
   - component: {fileID: 8703923443943841426}
   - component: {fileID: 3072233845362188708}
+  - component: {fileID: 8703923443943841427}
   m_Layer: 0
   m_Name: Curve.017
   m_TagString: FollowCam
@@ -16645,6 +16684,28 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2664323569654791049}
   m_Mesh: {fileID: 5298570549460083960, guid: aac80275e3be9f8448e07035eeebc980, type: 3}
+--- !u!95 &8703923443943841427
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2664323569654791049}
+  m_Enabled: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: cbccec05c87c89c40bd2de2fe8258ade, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!4 &8944429325068945741
 Transform:
   m_ObjectHideFlags: 0
