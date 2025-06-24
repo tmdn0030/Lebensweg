@@ -36,6 +36,20 @@ public class ScrollController : MonoBehaviour
     [Header("GUI-Debug")]
     public bool showDebugGUI = true;
 
+    [Header("Steuerung aktivieren")]
+    [Tooltip("Aktiviert die Steuerungselemente (Umschauen, Zoomen, Touch-Steuerung)")]
+    public bool enableLookControl = true;
+    public bool enableZoomControl = true;
+
+    [Header("Touchsteuerung")]
+    [Tooltip("Anzahl der Finger zum Scrollen auf dem Touchscreen")]
+    public int touchScrollFingerCount = 5;
+    [Tooltip("Anzahl der Finger zum Umschauen auf dem Touchscreen")]
+    public int touchLookFingerCount = 1;
+
+    [Tooltip("Anzahl der Taps für Zoom")]
+    public int zoomTapCount = 2;
+
     public float virtualDistance { get; private set; }
     public event Action<float> OnDistanceChanged;
 
@@ -97,7 +111,6 @@ public class ScrollController : MonoBehaviour
 
         if (!isClamped)
             virtualScrollBuffer += effectiveVelocity * Time.deltaTime;
-            
 
         virtualDistance = Mathf.Round((currentDistance + virtualScrollBuffer) * 100f) / 100f;
 
@@ -140,26 +153,26 @@ public class ScrollController : MonoBehaviour
 
         if (Mouse.current != null && Mouse.current.leftButton.wasPressedThisFrame)
         {
-            if (Time.time - lastMouseClickTime < doubleClickThreshold)
+            if (Time.time - lastMouseClickTime < doubleClickThreshold && enableZoomControl)
             {
                 TriggerZoom();
             }
             lastMouseClickTime = Time.time;
         }
 
-        if (Touchscreen.current != null && touchCount > 0)
+        if (Touchscreen.current != null && touchCount >= zoomTapCount && enableZoomControl)
         {
             var touch = Touchscreen.current.primaryTouch;
-            if (touch.tapCount.ReadValue() >= 2)
+            if (touch.tapCount.ReadValue() >= zoomTapCount)
             {
                 TriggerZoom();
             }
         }
 
 #if UNITY_EDITOR
-        if (leftPressed && !rightPressed)
+        if (leftPressed && !rightPressed && enableLookControl)
 #else
-        if (touchCount == 5)
+        if (touchCount == touchLookFingerCount && enableLookControl)
 #endif
         {
             Vector2 currentPos = leftPressed
@@ -181,9 +194,9 @@ public class ScrollController : MonoBehaviour
         else isScrolling = false;
 
 #if UNITY_EDITOR
-        if (rightPressed)
+        if (rightPressed && enableLookControl)
 #else
-        if (touchCount == 1)
+        if (touchCount == touchLookFingerCount && enableLookControl)
 #endif
         {
             Vector2 lookPos = rightPressed
@@ -222,7 +235,7 @@ public class ScrollController : MonoBehaviour
 
     void TriggerZoom()
     {
-        if (isZooming || mainCam == null) return;
+        if (!enableZoomControl || isZooming || mainCam == null) return;
 
         if (zoomCoroutine != null)
             StopCoroutine(zoomCoroutine);
@@ -234,6 +247,7 @@ public class ScrollController : MonoBehaviour
     {
         isZooming = true;
 
+        // Zoom hinein
         while (Mathf.Abs(mainCam.fieldOfView - zoomedFOV) > 0.1f)
         {
             mainCam.fieldOfView = Mathf.Lerp(mainCam.fieldOfView, zoomedFOV, Time.deltaTime * zoomSpeed);
@@ -242,6 +256,7 @@ public class ScrollController : MonoBehaviour
 
         yield return new WaitForSeconds(zoomDuration);
 
+        // Zoom heraus
         while (Mathf.Abs(mainCam.fieldOfView - defaultFOV) > 0.1f)
         {
             mainCam.fieldOfView = Mathf.Lerp(mainCam.fieldOfView, defaultFOV, Time.deltaTime * zoomSpeed);
