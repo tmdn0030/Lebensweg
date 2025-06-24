@@ -6348,8 +6348,8 @@ GameObject:
   - component: {fileID: 203737585}
   - component: {fileID: 203737586}
   - component: {fileID: 203737587}
-  - component: {fileID: 203737589}
   - component: {fileID: 203737591}
+  - component: {fileID: 203737592}
   m_Layer: 0
   m_Name: Scripts
   m_TagString: Untagged
@@ -6404,19 +6404,21 @@ MonoBehaviour:
   smoothFactor: 1
   updateInterval: 0.2
   maxDistance: 50
---- !u!114 &203737589
+--- !u!114 &203737591
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 203737583}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3b7706d76e5d9684fa4c7f3627afca65, type: 3}
+  m_Script: {fileID: 11500000, guid: df47dce93dba2204ca08a6605dfb9f44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &203737591
+  lightSettingsList: []
+  scrollController: {fileID: 0}
+--- !u!114 &203737592
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -6428,18 +6430,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df47dce93dba2204ca08a6605dfb9f44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cinemachineCamera: {fileID: 453898846}
-  lightEvents:
-  - triggerDistance: 43
-    revealRadius: 5
-    directionalLight: {fileID: 410087040}
-    targetIntensity: 0
-    initialIntensity: 0
-  - triggerDistance: 57.6
-    revealRadius: 5
-    directionalLight: {fileID: 2100370999}
-    targetIntensity: 3000
-    initialIntensity: 3000
+  lightSettingsList: []
+  scrollController: {fileID: 0}
 --- !u!1 &214971013
 GameObject:
   m_ObjectHideFlags: 0
@@ -8559,7 +8551,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d480dd16fe33694395cb90486bc978f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scroller: {fileID: 453898856}
+  scroller: {fileID: 0}
   originAnchor: {fileID: 344334276}
   relativeTriggerDistance: 10
   revealRadius: 20
