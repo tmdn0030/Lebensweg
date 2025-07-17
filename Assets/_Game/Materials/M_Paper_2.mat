@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: M_Paper
+  m_Name: M_Paper_2
   m_Shader: {fileID: -6465566751694194690, guid: 22e6ceed740ed6947b9fa2c95a665024, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -338,7 +338,7 @@ Material:
     - _UVBase: 0
     - _UVDetail: 0
     - _UVEmissive: 0
-    - _UV_Scale: 1
+    - _UV_Scale: 0.2
     - _UseEmissiveIntensity: 0
     - _UseShadowThreshold: 0
     - _UseTexture: 0
