@@ -6326,8 +6326,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d4b650dee9d6a04c95ecd30a570caaf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  splineContainer: {fileID: 0}
   dolly: {fileID: 453898848}
-  triggerDistance: 22.8
+  triggerOffset: 0
   revealRadius: 7.54
   animationStateName: Woman
 --- !u!95 &79808874
@@ -6496,8 +6497,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d4b650dee9d6a04c95ecd30a570caaf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  splineContainer: {fileID: 0}
   dolly: {fileID: 453898848}
-  triggerDistance: 10
+  triggerOffset: 0
   revealRadius: 5
   animationStateName: ObjectAnimation
 --- !u!4 &99737942 stripped
@@ -6954,8 +6956,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d4b650dee9d6a04c95ecd30a570caaf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  splineContainer: {fileID: 0}
   dolly: {fileID: 453898848}
-  triggerDistance: 64.5
+  triggerOffset: 0
   revealRadius: 3
   animationStateName: GroundAppear
 --- !u!95 &172639729
@@ -8358,8 +8361,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d4b650dee9d6a04c95ecd30a570caaf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  splineContainer: {fileID: 0}
   dolly: {fileID: 453898848}
-  triggerDistance: 15.5
+  triggerOffset: 0
   revealRadius: 8
   animationStateName: AlphaSpaceTextReveal
 --- !u!95 &282187394
@@ -9843,6 +9847,7 @@ GameObject:
   - component: {fileID: 453898853}
   - component: {fileID: 453898854}
   - component: {fileID: 453898860}
+  - component: {fileID: 453898861}
   m_Layer: 0
   m_Name: CinemachineCamera
   m_TagString: MainCamera
@@ -9907,7 +9912,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_SplineSettings:
     Spline: {fileID: 1113060108}
-    Position: 414.1
+    Position: 378
     Units: 0
   SplineOffset: {x: 0, y: 0, z: 0}
   CameraRotation: 2
@@ -9935,8 +9940,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 453898845}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.005701683, y: -0.8362286, z: 0.0093325935, w: -0.5482719}
-  m_LocalPosition: {x: 273.56622, y: 7.9741883, z: 74.88071}
+  m_LocalRotation: {x: 0.0011945454, y: -0.8406618, z: -0.0018543021, w: -0.541556}
+  m_LocalPosition: {x: 241.61185, y: 7.9707594, z: 91.42561}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -10412,6 +10417,20 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &453898861
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 453898845}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 884c55cb985e7564795f83c65b15ada9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activationRadius: 20
+  deactivationRadius: 40
 --- !u!1 &456315914
 GameObject:
   m_ObjectHideFlags: 0
@@ -12704,8 +12723,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d4b650dee9d6a04c95ecd30a570caaf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  splineContainer: {fileID: 0}
   dolly: {fileID: 453898848}
-  triggerDistance: 106
+  triggerOffset: 0
   revealRadius: 20
   animationStateName: GroundAppear
 --- !u!95 &647304612
@@ -13530,8 +13550,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d4b650dee9d6a04c95ecd30a570caaf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  splineContainer: {fileID: 0}
   dolly: {fileID: 453898848}
-  triggerDistance: 10
+  triggerOffset: 0
   revealRadius: 6
   animationStateName: ChildMovement
 --- !u!95 &717290361
@@ -14926,8 +14947,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d4b650dee9d6a04c95ecd30a570caaf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  splineContainer: {fileID: 0}
   dolly: {fileID: 453898848}
-  triggerDistance: 9.6
+  triggerOffset: 0
   revealRadius: 4
   animationStateName: GateOpenL
 --- !u!95 &877771064
@@ -15483,8 +15505,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 907334442}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.005701683, y: -0.8362286, z: 0.0093325935, w: -0.5482719}
-  m_LocalPosition: {x: 273.56622, y: 7.9741883, z: 74.88071}
+  m_LocalRotation: {x: 0.0011945454, y: -0.8406618, z: -0.0018543021, w: -0.541556}
+  m_LocalPosition: {x: 241.61185, y: 7.9707594, z: 91.42561}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -16449,8 +16471,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d4b650dee9d6a04c95ecd30a570caaf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  splineContainer: {fileID: 0}
   dolly: {fileID: 453898848}
-  triggerDistance: 43.7
+  triggerOffset: 0
   revealRadius: 5
   animationStateName: AlphaTextReveal
 --- !u!95 &977448647
@@ -16720,8 +16743,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d4b650dee9d6a04c95ecd30a570caaf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  splineContainer: {fileID: 0}
   dolly: {fileID: 453898848}
-  triggerDistance: 38
+  triggerOffset: 0
   revealRadius: 5
   animationStateName: AlphaTextReveal
 --- !u!95 &985510118
@@ -19588,8 +19612,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d4b650dee9d6a04c95ecd30a570caaf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  splineContainer: {fileID: 0}
   dolly: {fileID: 453898848}
-  triggerDistance: 9.5
+  triggerOffset: 0
   revealRadius: 3.5
   animationStateName: GateOpenR
 --- !u!95 &1155953538
@@ -21717,10 +21742,34 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 79a9374bd4bcf1b4eabe9cd09c81544a, type: 2}
+    - target: {fileID: -6255006347478153850, guid: 33b343fab54023543889779c00267a74, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 79a9374bd4bcf1b4eabe9cd09c81544a, type: 2}
+    - target: {fileID: -853745229403257319, guid: 33b343fab54023543889779c00267a74, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 79a9374bd4bcf1b4eabe9cd09c81544a, type: 2}
+    - target: {fileID: -751726271107019071, guid: 33b343fab54023543889779c00267a74, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 79a9374bd4bcf1b4eabe9cd09c81544a, type: 2}
     - target: {fileID: 919132149155446097, guid: 33b343fab54023543889779c00267a74, type: 3}
       propertyPath: m_Name
       value: "milit\xE4rmarsch2"
       objectReference: {fileID: 0}
+    - target: {fileID: 1154999719735439145, guid: 33b343fab54023543889779c00267a74, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 79a9374bd4bcf1b4eabe9cd09c81544a, type: 2}
+    - target: {fileID: 2492385922294146579, guid: 33b343fab54023543889779c00267a74, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 79a9374bd4bcf1b4eabe9cd09c81544a, type: 2}
+    - target: {fileID: 6622456186636429139, guid: 33b343fab54023543889779c00267a74, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 79a9374bd4bcf1b4eabe9cd09c81544a, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -21731,6 +21780,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 33b343fab54023543889779c00267a74, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1859677907}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 33b343fab54023543889779c00267a74, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1859677912}
   m_SourcePrefab: {fileID: 100100000, guid: 33b343fab54023543889779c00267a74, type: 3}
 --- !u!1 &1338608676
 GameObject:
@@ -25726,9 +25778,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d4b650dee9d6a04c95ecd30a570caaf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  splineContainer: {fileID: 1113060108}
   dolly: {fileID: 453898848}
-  triggerDistance: 421
-  revealRadius: 7.54
+  triggerOffset: -18.16
+  revealRadius: 3
   animationStateName: AlphaMatShow
 --- !u!95 &1859677908
 Animator:
@@ -25752,6 +25805,19 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1859677912
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1859677903}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c03f58f16f120c045bae5a63b50a7a1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  alpha: 1
 --- !u!4 &1863333778 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: da5f62345850a9b4289abd0076beec9b, type: 3}
@@ -27175,8 +27241,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d4b650dee9d6a04c95ecd30a570caaf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  splineContainer: {fileID: 0}
   dolly: {fileID: 453898848}
-  triggerDistance: 8
+  triggerOffset: 0
   revealRadius: 7
   animationStateName: AlphaSpaceTextReveal
 --- !u!95 &1980135986
@@ -28034,8 +28101,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d4b650dee9d6a04c95ecd30a570caaf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  splineContainer: {fileID: 0}
   dolly: {fileID: 453898848}
-  triggerDistance: 16.5
+  triggerOffset: 0
   revealRadius: 8
   animationStateName: AlphaTextReveal
 --- !u!95 &2037359678
