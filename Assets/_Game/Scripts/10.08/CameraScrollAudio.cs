@@ -13,9 +13,9 @@ public class CameraScrollAudio : MonoBehaviour
 
     [Header("Pink Noise")]
     public AudioSource noiseSource;      // AudioSource mit Pink Noise
-    public AudioLowPassFilter lowPass;   // Für Höhensteuerung
-    public float maxNoiseVolume = 0.15f; // Max Lautstärke bei hoher Geschwindigkeit
-    public float speedForMaxVolume = 5f; // Geschwindigkeit, bei der max Lautstärke erreicht wird
+    public AudioLowPassFilter lowPass;   // Fï¿½r Hï¿½hensteuerung
+    public float maxNoiseVolume = 0.15f; // Max Lautstï¿½rke bei hoher Geschwindigkeit
+    public float speedForMaxVolume = 5f; // Geschwindigkeit, bei der max Lautstï¿½rke erreicht wird
     public float minCutoff = 500f;       // LowPass Cutoff bei Stillstand
     public float maxCutoff = 5000f;      // LowPass Cutoff bei max Speed
 
@@ -60,7 +60,7 @@ public class CameraScrollAudio : MonoBehaviour
         // --- Pink Noise (Geschwindigkeits-basiert) ---
         float speedNormalized = Mathf.Clamp01(speed / speedForMaxVolume);
 
-        // Lautstärke anpassen
+        // Lautstï¿½rke anpassen
         float targetVol = speedNormalized * maxNoiseVolume;
         noiseSource.volume = Mathf.Lerp(noiseSource.volume, targetVol, Time.deltaTime * 5f);
 
@@ -71,8 +71,7 @@ public class CameraScrollAudio : MonoBehaviour
             lowPass.cutoffFrequency = Mathf.Lerp(lowPass.cutoffFrequency, targetCutoff, Time.deltaTime * 5f);
         }
 
-        // Optional: Pitch minimal anpassen für Windgefühl
+        // Optional: Pitch minimal anpassen fï¿½r Windgefï¿½hl
         noiseSource.pitch = Mathf.Lerp(1f, 1.05f, speedNormalized);
     }
 }
-d
