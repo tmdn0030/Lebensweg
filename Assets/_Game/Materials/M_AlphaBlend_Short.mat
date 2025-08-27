@@ -23,7 +23,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: M_AlphaBlend 1
+  m_Name: M_AlphaBlend_Short
   m_Shader: {fileID: -6465566751694194690, guid: 2a24a7d23c6c7e14a9be7e019279baaa, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -193,8 +193,8 @@ Material:
     - _EnableGeometricSpecularAA: 0
     - _EnergyConservingSpecularColor: 1
     - _ExcludeFromTUAndAA: 0
-    - _FadeEnd: 20
-    - _FadeStart: 22
+    - _FadeEnd: 4.2
+    - _FadeStart: 3.8
     - _HeightAmplitude: 0.02
     - _HeightCenter: 0.5
     - _HeightMapParametrization: 0

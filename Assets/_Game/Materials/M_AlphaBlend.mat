@@ -193,8 +193,8 @@ Material:
     - _EnableGeometricSpecularAA: 0
     - _EnergyConservingSpecularColor: 1
     - _ExcludeFromTUAndAA: 0
-    - _FadeEnd: 16
-    - _FadeStart: 17.6
+    - _FadeEnd: 0
+    - _FadeStart: 0
     - _HeightAmplitude: 0.02
     - _HeightCenter: 0.5
     - _HeightMapParametrization: 0
