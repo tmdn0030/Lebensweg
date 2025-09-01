@@ -204,25 +204,5 @@ public class RotationController : MonoBehaviour
         lookAtSpeed = Mathf.Max(0.01f, lookAtSpeed);
     }
 
-    void OnGUI()
-    {
-        int scale = 3;
-        int fontSize = 12 * scale;
-        int lineHeight = 20 * scale;
-        int padding = 10 * scale;
-        int boxWidth = 350 * scale;
-        int boxHeight = 5 * lineHeight + padding * 2;
-
-        GUIStyle style = new GUIStyle(GUI.skin.label);
-        style.fontSize = fontSize;
-        style.normal.textColor = Color.white;
-
-        GUI.BeginGroup(new Rect(10, 10, boxWidth, boxHeight), GUI.skin.box);
-        GUI.Label(new Rect(padding, padding + 0 * lineHeight, boxWidth, lineHeight), $"📌 Input Pos: {debugInputPosition}", style);
-        GUI.Label(new Rect(padding, padding + 1 * lineHeight, boxWidth, lineHeight), $"🎯 Getroffen: {debugHit}", style);
-        GUI.Label(new Rect(padding, padding + 2 * lineHeight, boxWidth, lineHeight), $"🔁 Dragging: {debugDragging}", style);
-        GUI.Label(new Rect(padding, padding + 3 * lineHeight, boxWidth, lineHeight), $"⚙️ Velocity: {debugVelocity}", style);
-        GUI.Label(new Rect(padding, padding + 4 * lineHeight, boxWidth, lineHeight), $"👁️ LookAt Status: {debugLookAtStatus}", style);
-        GUI.EndGroup();
-    }
+    
 }
