@@ -6927,7 +6927,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b5738e5ab4f0c246840cdafc16ca4fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneNameToLoad: Scene5
+  sceneNameToLoad: Scene6
   delayBeforeSceneLoad: 2
   doubleClickThreshold: 0.3
   fadeImageTag: FadeImage
