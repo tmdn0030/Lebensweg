@@ -430,9 +430,6 @@ public class MovementController : MonoBehaviour
     [Header("AnimationZones (werden automatisch gefunden, falls leer)")]
     public AnimationZone[] animationZones;
 
-    [Header("TextZones (werden automatisch gefunden, falls leer)")]
-    public TextZone[] textZones;
-
     [Header("Touch-Einstellungen")]
     [Range(1,5)]
     public int fingersToScroll = 2;
@@ -444,8 +441,6 @@ public class MovementController : MonoBehaviour
     private YawOverrideExtension yawExtension;
     private float yawAmount;
 
-    private bool isZooming; // (nicht mehr verwendet, bleibt entfernt aus Logik)
-
     private Coroutine scrollSpeedCoroutine;
 
     private Vector2 previousScrollPos;
@@ -454,8 +449,6 @@ public class MovementController : MonoBehaviour
     private bool isLooking;
 
     private CinemachineBasicMultiChannelPerlin shakePerlin;
-
-    private Camera mainCam;
 
     private bool isClamped = false;
     private SpeedZone activeZone;
@@ -472,10 +465,6 @@ public class MovementController : MonoBehaviour
 
         shakePerlin = cineCam.GetComponentInChildren<CinemachineBasicMultiChannelPerlin>();
 
-        mainCam = Camera.main;
-        if (mainCam == null)
-            Debug.LogWarning("Keine Kamera mit Tag MainCamera gefunden!");
-
         initialScrollSpeed = scrollSpeedMetersPerPixel;
 
         if (speedZones == null || speedZones.Length == 0)
@@ -483,9 +472,6 @@ public class MovementController : MonoBehaviour
 
         if (animationZones == null || animationZones.Length == 0)
             animationZones = Object.FindObjectsByType<AnimationZone>(FindObjectsSortMode.None);
-
-        if (textZones == null || textZones.Length == 0)
-            textZones = Object.FindObjectsByType<TextZone>(FindObjectsSortMode.None);
 
         fingersToScroll = Mathf.Clamp(fingersToScroll, 1, 5);
     }
@@ -495,16 +481,13 @@ public class MovementController : MonoBehaviour
         float maxDistance = splineDolly.Spline?.Spline?.GetLength() ?? 0f;
         float usableMaxDistance = Mathf.Max(0f, maxDistance - blockEndOffset);
 
-        // ----- TextZones zuerst prüfen! -----
-        if (HandleTextZones()) return;
-
         HandleInput();
 
         float effectiveVelocity = scrollVelocity;
         currentDistance = Mathf.Clamp(currentDistance + effectiveVelocity * Time.deltaTime, 0, usableMaxDistance);
         splineDolly.CameraPosition = currentDistance;
 
-        // Clamp-Logik wie gehabt
+        // Clamp-Logik
         if ((currentDistance >= usableMaxDistance && scrollVelocity > 0f) ||
             (currentDistance <= 0f && scrollVelocity < 0f))
         {
@@ -516,6 +499,7 @@ public class MovementController : MonoBehaviour
             isClamped = false;
         }
 
+        // Dämpfung
         float damping = 0.9f;
         float dampingFactor = Mathf.Pow(damping, Time.deltaTime * 60f);
         scrollVelocity *= dampingFactor;
@@ -536,50 +520,6 @@ public class MovementController : MonoBehaviour
 
         HandleSpeedZones(maxDistance);
         HandleAnimationZones();
-    }
-
-    // ---- TEXT ZONES: Drag-Y-Scrolling für Seitenwechsel ----
-    private bool HandleTextZones()
-    {
-        bool anyTextActive = false;
-        foreach (var zone in textZones)
-        {
-            if (zone == null || zone.spline != splineDolly.Spline) continue;
-            bool isActive = zone.CheckAndTrigger(currentDistance, mainCam);
-
-            // Drag-Y-Scroll-Input (wie Bewegung):
-            if (isActive)
-            {
-                float deltaY = 0f;
-                bool dragging = false;
-                if (Mouse.current != null && Mouse.current.leftButton.isPressed)
-                {
-                    Vector2 currentPos = Mouse.current.position.ReadValue();
-                    if (!zone.isDragging)
-                    {
-                        zone.lastY = currentPos.y;
-                        zone.isDragging = true;
-                    }
-                    else
-                    {
-                        deltaY = currentPos.y - zone.lastY;
-                        zone.lastY = currentPos.y;
-                        if (Mathf.Abs(deltaY) > 1f)
-                            dragging = true;
-                    }
-                }
-                else
-                {
-                    zone.isDragging = false;
-                }
-                if (dragging)
-                    zone.HandleDragScroll(deltaY, mainCam);
-
-                scrollVelocity = 0f; // Movement deaktiviert während Dialog!
-            }
-            anyTextActive |= isActive;
-        }
-        return anyTextActive;
     }
 
     //---- SPEED ZONES -----
@@ -757,4 +697,5 @@ public class MovementController : MonoBehaviour
 #endif
     }
 }
+
 

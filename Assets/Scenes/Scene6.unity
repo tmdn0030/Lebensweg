@@ -1294,11 +1294,11 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: bfda1f235dfe36f438dab00a090b2077, type: 2}
     - target: {fileID: -7271449666460269675, guid: 9917ed7dc49912c4680da85ac7518835, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 16
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -6763858364670572316, guid: 9917ed7dc49912c4680da85ac7518835, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 16
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -5363424281805771908, guid: 9917ed7dc49912c4680da85ac7518835, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -1638,6 +1638,7 @@ MonoBehaviour:
   triggerOffset: -4.49
   revealRadius: 3.64
   animationStateName: AlphaTextReveal
+  updateInterval: 0.1
 --- !u!95 &48034332
 Animator:
   serializedVersion: 7
@@ -2051,6 +2052,7 @@ MonoBehaviour:
   triggerOffset: 3.28
   revealRadius: 5
   animationStateName: AlphaTextReveal
+  updateInterval: 0.1
 --- !u!95 &51074177
 Animator:
   serializedVersion: 7
@@ -7236,6 +7238,7 @@ MonoBehaviour:
   triggerOffset: -2.46
   revealRadius: 3.64
   animationStateName: AlphaTextReveal
+  updateInterval: 0.1
 --- !u!95 &72700481
 Animator:
   serializedVersion: 7
@@ -7450,6 +7453,7 @@ MonoBehaviour:
   triggerOffset: 0
   revealRadius: 7.54
   animationStateName: Woman
+  updateInterval: 0.1
 --- !u!95 &79808874
 Animator:
   serializedVersion: 7
@@ -7603,6 +7607,7 @@ MonoBehaviour:
   triggerOffset: -0.5
   revealRadius: 5.22
   animationStateName: AlphaTextReveal
+  updateInterval: 0.1
 --- !u!95 &85898177
 Animator:
   serializedVersion: 7
@@ -7873,6 +7878,7 @@ MonoBehaviour:
   triggerOffset: 0
   revealRadius: 5
   animationStateName: ObjectAnimation
+  updateInterval: 0.1
 --- !u!4 &99737942 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 0dcfc8c68bcdb6946ab08c379712875d, type: 3}
@@ -8098,6 +8104,7 @@ MonoBehaviour:
   triggerOffset: -2
   revealRadius: 8
   animationStateName: AlphaSpaceTextReveal
+  updateInterval: 0.1
 --- !u!95 &107460526
 Animator:
   serializedVersion: 7
@@ -8901,6 +8908,7 @@ MonoBehaviour:
   triggerOffset: 0
   revealRadius: 3
   animationStateName: GroundAppear
+  updateInterval: 0.1
 --- !u!95 &172639729
 Animator:
   serializedVersion: 7
@@ -8979,6 +8987,7 @@ MonoBehaviour:
   triggerOffset: 0.8
   revealRadius: 5
   animationStateName: AlphaTextReveal
+  updateInterval: 0.1
 --- !u!95 &173252495
 Animator:
   serializedVersion: 7
@@ -9156,6 +9165,7 @@ MonoBehaviour:
   triggerOffset: -0.39
   revealRadius: 5.22
   animationStateName: AlphaTextReveal
+  updateInterval: 0.1
 --- !u!95 &174689146
 Animator:
   serializedVersion: 7
@@ -9389,6 +9399,7 @@ MonoBehaviour:
   triggerOffset: -2
   revealRadius: 8
   animationStateName: AlphaSpaceTextReveal
+  updateInterval: 0.1
 --- !u!95 &176447787
 Animator:
   serializedVersion: 7
@@ -10171,7 +10182,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 203737583}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 49bea71d9b7d3794391a249aeaf17079, type: 3}
   m_Name: 
@@ -10346,6 +10357,7 @@ MonoBehaviour:
   triggerOffset: 0
   revealRadius: 8
   animationStateName: PositionTextReveal
+  updateInterval: 0.1
 --- !u!95 &207708706
 Animator:
   serializedVersion: 7
@@ -14688,6 +14700,7 @@ MonoBehaviour:
   triggerOffset: -2
   revealRadius: 8
   animationStateName: AlphaSpaceTextReveal
+  updateInterval: 0.1
 --- !u!95 &248979198
 Animator:
   serializedVersion: 7
@@ -14921,6 +14934,7 @@ MonoBehaviour:
   triggerOffset: -0.5
   revealRadius: 5.22
   animationStateName: AlphaTextReveal
+  updateInterval: 0.1
 --- !u!95 &262240959
 Animator:
   serializedVersion: 7
@@ -15731,6 +15745,7 @@ MonoBehaviour:
   triggerOffset: 0
   revealRadius: 8
   animationStateName: AlphaSpaceTextReveal
+  updateInterval: 0.1
 --- !u!95 &282187394
 Animator:
   serializedVersion: 7
@@ -15809,6 +15824,7 @@ MonoBehaviour:
   triggerOffset: -2
   revealRadius: 8
   animationStateName: AlphaSpaceTextReveal
+  updateInterval: 0.1
 --- !u!95 &289979384
 Animator:
   serializedVersion: 7
@@ -15986,6 +16002,7 @@ MonoBehaviour:
   triggerOffset: -0.23
   revealRadius: 6.9
   animationStateName: AlphaTextReveal
+  updateInterval: 0.1
 --- !u!95 &292395818
 Animator:
   serializedVersion: 7
@@ -16272,6 +16289,7 @@ MonoBehaviour:
   triggerOffset: -2
   revealRadius: 8
   animationStateName: AlphaSpaceTextReveal
+  updateInterval: 0.1
 --- !u!95 &297026880
 Animator:
   serializedVersion: 7
@@ -16449,6 +16467,7 @@ MonoBehaviour:
   triggerOffset: 0
   revealRadius: 8
   animationStateName: AlphaTextReveal
+  updateInterval: 0.1
 --- !u!95 &299046126
 Animator:
   serializedVersion: 7
@@ -17093,6 +17112,7 @@ MonoBehaviour:
   triggerOffset: -2
   revealRadius: 8
   animationStateName: AlphaSpaceTextReveal
+  updateInterval: 0.1
 --- !u!95 &324879979
 Animator:
   serializedVersion: 7
@@ -17270,6 +17290,7 @@ MonoBehaviour:
   triggerOffset: -2
   revealRadius: 8
   animationStateName: AlphaSpaceTextReveal
+  updateInterval: 0.1
 --- !u!95 &326006068
 Animator:
   serializedVersion: 7
@@ -17447,6 +17468,7 @@ MonoBehaviour:
   triggerOffset: 3.28
   revealRadius: 5
   animationStateName: AlphaTextReveal
+  updateInterval: 0.1
 --- !u!95 &326494318
 Animator:
   serializedVersion: 7
@@ -17959,6 +17981,7 @@ MonoBehaviour:
   triggerOffset: -0.5
   revealRadius: 5.22
   animationStateName: AlphaTextReveal
+  updateInterval: 0.1
 --- !u!95 &353636227
 Animator:
   serializedVersion: 7
@@ -18136,6 +18159,7 @@ MonoBehaviour:
   triggerOffset: -2
   revealRadius: 8
   animationStateName: AlphaSpaceTextReveal
+  updateInterval: 0.1
 --- !u!95 &357603062
 Animator:
   serializedVersion: 7
@@ -18313,6 +18337,7 @@ MonoBehaviour:
   triggerOffset: 0
   revealRadius: 8
   animationStateName: AlphaTextReveal
+  updateInterval: 0.1
 --- !u!95 &358433208
 Animator:
   serializedVersion: 7
@@ -18708,6 +18733,7 @@ MonoBehaviour:
   triggerOffset: 3.28
   revealRadius: 5
   animationStateName: AlphaTextReveal
+  updateInterval: 0.1
 --- !u!95 &378247083
 Animator:
   serializedVersion: 7
@@ -18994,6 +19020,7 @@ MonoBehaviour:
   triggerOffset: 3.28
   revealRadius: 5
   animationStateName: AlphaTextReveal
+  updateInterval: 0.1
 --- !u!95 &383069279
 Animator:
   serializedVersion: 7
@@ -19411,6 +19438,7 @@ MonoBehaviour:
   triggerOffset: 3.28
   revealRadius: 5
   animationStateName: AlphaTextReveal
+  updateInterval: 0.1
 --- !u!95 &390355909
 Animator:
   serializedVersion: 7
@@ -19588,6 +19616,7 @@ MonoBehaviour:
   triggerOffset: -2
   revealRadius: 8
   animationStateName: AlphaSpaceTextReveal
+  updateInterval: 0.1
 --- !u!95 &391921024
 Animator:
   serializedVersion: 7
@@ -20303,6 +20332,7 @@ MonoBehaviour:
   triggerOffset: 0
   revealRadius: 8
   animationStateName: AlphaTextReveal
+  updateInterval: 0.1
 --- !u!95 &406218955
 Animator:
   serializedVersion: 7
@@ -20921,6 +20951,7 @@ MonoBehaviour:
   triggerOffset: -2
   revealRadius: 8
   animationStateName: AlphaSpaceTextReveal
+  updateInterval: 0.1
 --- !u!95 &419296654
 Animator:
   serializedVersion: 7
@@ -21098,6 +21129,7 @@ MonoBehaviour:
   triggerOffset: -2
   revealRadius: 8
   animationStateName: AlphaSpaceTextReveal
+  updateInterval: 0.1
 --- !u!95 &421413597
 Animator:
   serializedVersion: 7
@@ -21796,6 +21828,7 @@ MonoBehaviour:
   triggerOffset: -2
   revealRadius: 8
   animationStateName: AlphaSpaceTextReveal
+  updateInterval: 0.1
 --- !u!95 &436192421
 Animator:
   serializedVersion: 7
@@ -22029,6 +22062,7 @@ MonoBehaviour:
   triggerOffset: 0
   revealRadius: 8
   animationStateName: AlphaTextReveal
+  updateInterval: 0.1
 --- !u!95 &449150346
 Animator:
   serializedVersion: 7
@@ -23660,6 +23694,7 @@ MonoBehaviour:
   triggerOffset: -0.76
   revealRadius: 1.82
   animationStateName: AlphaTextReveal
+  updateInterval: 0.1
 --- !u!95 &456926971
 Animator:
   serializedVersion: 7
@@ -23902,6 +23937,7 @@ MonoBehaviour:
   triggerOffset: -2
   revealRadius: 8
   animationStateName: AlphaSpaceTextReveal
+  updateInterval: 0.1
 --- !u!95 &470024363
 Animator:
   serializedVersion: 7
@@ -24733,6 +24769,7 @@ MonoBehaviour:
   triggerOffset: -0.5
   revealRadius: 5.22
   animationStateName: AlphaTextReveal
+  updateInterval: 0.1
 --- !u!95 &486248910
 Animator:
   serializedVersion: 7
@@ -24967,6 +25004,7 @@ MonoBehaviour:
   triggerOffset: 0.8
   revealRadius: 5
   animationStateName: AlphaTextReveal
+  updateInterval: 0.1
 --- !u!95 &491450123
 Animator:
   serializedVersion: 7
@@ -25931,6 +25969,7 @@ MonoBehaviour:
   triggerOffset: -2
   revealRadius: 8
   animationStateName: AlphaSpaceTextReveal
+  updateInterval: 0.1
 --- !u!95 &540290974
 Animator:
   serializedVersion: 7
@@ -26323,6 +26362,7 @@ MonoBehaviour:
   triggerOffset: -2
   revealRadius: 8
   animationStateName: AlphaSpaceTextReveal
+  updateInterval: 0.1
 --- !u!95 &562453599
 Animator:
   serializedVersion: 7
@@ -28081,6 +28121,7 @@ MonoBehaviour:
   triggerOffset: -2.11
   revealRadius: 3.64
   animationStateName: AlphaTextReveal
+  updateInterval: 0.1
 --- !u!95 &620994650
 Animator:
   serializedVersion: 7
@@ -28501,6 +28542,7 @@ MonoBehaviour:
   triggerOffset: -2
   revealRadius: 8
   animationStateName: AlphaSpaceTextReveal
+  updateInterval: 0.1
 --- !u!95 &630792973
 Animator:
   serializedVersion: 7
@@ -28755,6 +28797,7 @@ MonoBehaviour:
   triggerOffset: 3.28
   revealRadius: 5
   animationStateName: AlphaTextReveal
+  updateInterval: 0.1
 --- !u!95 &640763216
 Animator:
   serializedVersion: 7
@@ -28932,6 +28975,7 @@ MonoBehaviour:
   triggerOffset: 0
   revealRadius: 8
   animationStateName: AlphaTextReveal
+  updateInterval: 0.1
 --- !u!95 &644644687
 Animator:
   serializedVersion: 7
@@ -29161,6 +29205,7 @@ MonoBehaviour:
   triggerOffset: 0
   revealRadius: 20
   animationStateName: GroundAppear
+  updateInterval: 0.1
 --- !u!95 &647304612
 Animator:
   serializedVersion: 7
@@ -29835,6 +29880,7 @@ MonoBehaviour:
   triggerOffset: 3.28
   revealRadius: 5
   animationStateName: AlphaTextReveal
+  updateInterval: 0.1
 --- !u!95 &679207068
 Animator:
   serializedVersion: 7
@@ -30163,6 +30209,7 @@ MonoBehaviour:
   triggerOffset: -6.7
   revealRadius: 3.68
   animationStateName: PositionTextReveal
+  updateInterval: 0.1
 --- !u!95 &692932352
 Animator:
   serializedVersion: 7
@@ -30495,6 +30542,7 @@ MonoBehaviour:
   triggerOffset: 0
   revealRadius: 6
   animationStateName: ChildMovement
+  updateInterval: 0.1
 --- !u!95 &717290361
 Animator:
   serializedVersion: 7
@@ -30732,6 +30780,7 @@ MonoBehaviour:
   triggerOffset: 3.28
   revealRadius: 5
   animationStateName: AlphaTextReveal
+  updateInterval: 0.1
 --- !u!95 &725565804
 Animator:
   serializedVersion: 7
@@ -31014,6 +31063,7 @@ MonoBehaviour:
   triggerOffset: 3.28
   revealRadius: 5
   animationStateName: AlphaTextReveal
+  updateInterval: 0.1
 --- !u!95 &730899099
 Animator:
   serializedVersion: 7
@@ -31401,6 +31451,7 @@ MonoBehaviour:
   triggerOffset: 3.28
   revealRadius: 5
   animationStateName: AlphaTextReveal
+  updateInterval: 0.1
 --- !u!95 &741814546
 Animator:
   serializedVersion: 7
@@ -31578,6 +31629,7 @@ MonoBehaviour:
   triggerOffset: -2.22
   revealRadius: 3.64
   animationStateName: PositionTextReveal
+  updateInterval: 0.1
 --- !u!95 &744278220
 Animator:
   serializedVersion: 7
@@ -31862,6 +31914,7 @@ MonoBehaviour:
   triggerOffset: -2
   revealRadius: 8
   animationStateName: AlphaSpaceTextReveal
+  updateInterval: 0.1
 --- !u!95 &749186048
 Animator:
   serializedVersion: 7
@@ -32096,6 +32149,7 @@ MonoBehaviour:
   triggerOffset: -1.82
   revealRadius: 2.94
   animationStateName: AlphaTextReveal
+  updateInterval: 0.1
 --- !u!95 &766339542
 Animator:
   serializedVersion: 7
@@ -32273,6 +32327,7 @@ MonoBehaviour:
   triggerOffset: 3.28
   revealRadius: 5
   animationStateName: AlphaTextReveal
+  updateInterval: 0.1
 --- !u!95 &769677395
 Animator:
   serializedVersion: 7
@@ -32450,6 +32505,7 @@ MonoBehaviour:
   triggerOffset: -2
   revealRadius: 8
   animationStateName: AlphaSpaceTextReveal
+  updateInterval: 0.1
 --- !u!95 &772192536
 Animator:
   serializedVersion: 7
@@ -32871,6 +32927,7 @@ MonoBehaviour:
   triggerOffset: -0.77
   revealRadius: 3.3
   animationStateName: AlphaTextReveal
+  updateInterval: 0.1
 --- !u!95 &793977142
 Animator:
   serializedVersion: 7
@@ -33266,6 +33323,7 @@ MonoBehaviour:
   triggerOffset: -5.74
   revealRadius: 5.03
   animationStateName: PositionTextReveal
+  updateInterval: 0.1
 --- !u!95 &818991320
 Animator:
   serializedVersion: 7
@@ -33444,6 +33502,7 @@ MonoBehaviour:
   triggerOffset: 0
   revealRadius: 8
   animationStateName: AlphaTextReveal
+  updateInterval: 0.1
 --- !u!95 &823847636
 Animator:
   serializedVersion: 7
@@ -34691,6 +34750,7 @@ MonoBehaviour:
   triggerOffset: 0
   revealRadius: 8
   animationStateName: AlphaTextReveal
+  updateInterval: 0.1
 --- !u!95 &871993879
 Animator:
   serializedVersion: 7
@@ -35272,6 +35332,7 @@ MonoBehaviour:
   triggerOffset: 0
   revealRadius: 4
   animationStateName: GateOpenL
+  updateInterval: 0.1
 --- !u!95 &877771064
 Animator:
   serializedVersion: 7
@@ -35831,6 +35892,7 @@ MonoBehaviour:
   triggerOffset: -2.85
   revealRadius: 3.64
   animationStateName: AlphaTextReveal
+  updateInterval: 0.1
 --- !u!95 &905989156
 Animator:
   serializedVersion: 7
@@ -36365,6 +36427,7 @@ MonoBehaviour:
   triggerOffset: -5.84
   revealRadius: 3.64
   animationStateName: AlphaTextReveal
+  updateInterval: 0.1
 --- !u!95 &912050353
 Animator:
   serializedVersion: 7
@@ -36824,6 +36887,7 @@ MonoBehaviour:
   triggerOffset: -2
   revealRadius: 8
   animationStateName: AlphaSpaceTextReveal
+  updateInterval: 0.1
 --- !u!95 &920004337
 Animator:
   serializedVersion: 7
@@ -37778,6 +37842,7 @@ MonoBehaviour:
   triggerOffset: 0
   revealRadius: 8
   animationStateName: PositionTextReveal
+  updateInterval: 0.1
 --- !u!95 &953128758
 Animator:
   serializedVersion: 7
@@ -38546,6 +38611,7 @@ MonoBehaviour:
   triggerOffset: -11.78
   revealRadius: 8
   animationStateName: AlphaSpaceTextReveal
+  updateInterval: 0.1
 --- !u!95 &968342363
 Animator:
   serializedVersion: 7
@@ -38928,6 +38994,7 @@ MonoBehaviour:
   triggerOffset: -2
   revealRadius: 8
   animationStateName: AlphaSpaceTextReveal
+  updateInterval: 0.1
 --- !u!95 &974896288
 Animator:
   serializedVersion: 7
@@ -39177,6 +39244,7 @@ MonoBehaviour:
   triggerOffset: -1.79
   revealRadius: 3.35
   animationStateName: AlphaTextReveal
+  updateInterval: 0.1
 --- !u!95 &977448647
 Animator:
   serializedVersion: 7
@@ -39339,6 +39407,7 @@ MonoBehaviour:
   triggerOffset: -4.54
   revealRadius: 5
   animationStateName: AlphaTextReveal
+  updateInterval: 0.1
 --- !u!95 &985510118
 Animator:
   serializedVersion: 7
@@ -39734,6 +39803,7 @@ MonoBehaviour:
   triggerOffset: -0.5
   revealRadius: 5.22
   animationStateName: AlphaTextReveal
+  updateInterval: 0.1
 --- !u!95 &996449775
 Animator:
   serializedVersion: 7
@@ -39911,6 +39981,7 @@ MonoBehaviour:
   triggerOffset: 3.28
   revealRadius: 5
   animationStateName: AlphaTextReveal
+  updateInterval: 0.1
 --- !u!95 &997347126
 Animator:
   serializedVersion: 7
@@ -40853,6 +40924,7 @@ MonoBehaviour:
   triggerOffset: -9.36
   revealRadius: 5.74
   animationStateName: A_shipappear
+  updateInterval: 0.1
 --- !u!95 &1006212320
 Animator:
   serializedVersion: 7
@@ -41962,6 +42034,7 @@ MonoBehaviour:
   triggerOffset: -2
   revealRadius: 8
   animationStateName: AlphaSpaceTextReveal
+  updateInterval: 0.1
 --- !u!95 &1038891932
 Animator:
   serializedVersion: 7
@@ -42406,6 +42479,7 @@ MonoBehaviour:
   triggerOffset: -6.7
   revealRadius: 3.68
   animationStateName: PositionTextReveal
+  updateInterval: 0.1
 --- !u!95 &1062375044
 Animator:
   serializedVersion: 7
@@ -42707,6 +42781,7 @@ MonoBehaviour:
   triggerOffset: -6.7
   revealRadius: 3.68
   animationStateName: PositionTextReveal
+  updateInterval: 0.1
 --- !u!95 &1071391155
 Animator:
   serializedVersion: 7
@@ -42884,6 +42959,7 @@ MonoBehaviour:
   triggerOffset: -2
   revealRadius: 8
   animationStateName: AlphaSpaceTextReveal
+  updateInterval: 0.1
 --- !u!95 &1073145987
 Animator:
   serializedVersion: 7
@@ -43061,6 +43137,7 @@ MonoBehaviour:
   triggerOffset: -2
   revealRadius: 8
   animationStateName: AlphaSpaceTextReveal
+  updateInterval: 0.1
 --- !u!95 &1082261713
 Animator:
   serializedVersion: 7
@@ -43346,6 +43423,7 @@ MonoBehaviour:
   triggerOffset: -10.17
   revealRadius: 8
   animationStateName: AlphaTextReveal
+  updateInterval: 0.1
 --- !u!95 &1084283685
 Animator:
   serializedVersion: 7
@@ -44158,6 +44236,7 @@ MonoBehaviour:
   triggerOffset: -2
   revealRadius: 8
   animationStateName: AlphaSpaceTextReveal
+  updateInterval: 0.1
 --- !u!95 &1106274656
 Animator:
   serializedVersion: 7
@@ -45616,6 +45695,7 @@ MonoBehaviour:
   triggerOffset: -8.52
   revealRadius: 3.17
   animationStateName: AlphaTextReveal
+  updateInterval: 0.1
 --- !u!95 &1137286208
 Animator:
   serializedVersion: 7
@@ -45897,6 +45977,7 @@ MonoBehaviour:
   triggerOffset: 3.28
   revealRadius: 5
   animationStateName: AlphaTextReveal
+  updateInterval: 0.1
 --- !u!95 &1143251267
 Animator:
   serializedVersion: 7
@@ -46074,6 +46155,7 @@ MonoBehaviour:
   triggerOffset: 0.24
   revealRadius: 2.67
   animationStateName: AlphaTextReveal
+  updateInterval: 0.1
 --- !u!95 &1145314916
 Animator:
   serializedVersion: 7
@@ -46430,6 +46512,7 @@ MonoBehaviour:
   triggerOffset: -0.5
   revealRadius: 5.22
   animationStateName: AlphaTextReveal
+  updateInterval: 0.1
 --- !u!95 &1148728693
 Animator:
   serializedVersion: 7
@@ -46716,6 +46799,7 @@ MonoBehaviour:
   triggerOffset: -2
   revealRadius: 8
   animationStateName: AlphaSpaceTextReveal
+  updateInterval: 0.1
 --- !u!95 &1155351630
 Animator:
   serializedVersion: 7
@@ -46859,6 +46943,7 @@ MonoBehaviour:
   triggerOffset: 0
   revealRadius: 3.5
   animationStateName: GateOpenR
+  updateInterval: 0.1
 --- !u!95 &1155953538
 Animator:
   serializedVersion: 7
@@ -47191,6 +47276,7 @@ MonoBehaviour:
   triggerOffset: -0.97
   revealRadius: 5.22
   animationStateName: AlphaTextReveal
+  updateInterval: 0.1
 --- !u!95 &1168798625
 Animator:
   serializedVersion: 7
@@ -47608,6 +47694,7 @@ MonoBehaviour:
   triggerOffset: -0.7
   revealRadius: 3.5
   animationStateName: AlphaTextReveal
+  updateInterval: 0.1
 --- !u!95 &1184774162
 Animator:
   serializedVersion: 7
@@ -48084,6 +48171,7 @@ MonoBehaviour:
   triggerOffset: -0.81
   revealRadius: 2.44
   animationStateName: AlphaTextReveal
+  updateInterval: 0.1
 --- !u!95 &1191760165
 Animator:
   serializedVersion: 7
@@ -48317,6 +48405,7 @@ MonoBehaviour:
   triggerOffset: 0
   revealRadius: 8
   animationStateName: AlphaTextReveal
+  updateInterval: 0.1
 --- !u!95 &1212216570
 Animator:
   serializedVersion: 7
@@ -48813,6 +48902,7 @@ MonoBehaviour:
   triggerOffset: -0.23
   revealRadius: 3.64
   animationStateName: PositionTextReveal
+  updateInterval: 0.1
 --- !u!95 &1221363011
 Animator:
   serializedVersion: 7
@@ -49247,6 +49337,7 @@ MonoBehaviour:
   triggerOffset: -1.36
   revealRadius: 2.38
   animationStateName: AlphaTextReveal
+  updateInterval: 0.1
 --- !u!95 &1232702824
 Animator:
   serializedVersion: 7
@@ -50219,6 +50310,7 @@ MonoBehaviour:
   triggerOffset: -2
   revealRadius: 8
   animationStateName: AlphaSpaceTextReveal
+  updateInterval: 0.1
 --- !u!95 &1257209138
 Animator:
   serializedVersion: 7
@@ -50473,6 +50565,7 @@ MonoBehaviour:
   triggerOffset: -0.5
   revealRadius: 5.22
   animationStateName: AlphaTextReveal
+  updateInterval: 0.1
 --- !u!95 &1264214464
 Animator:
   serializedVersion: 7
@@ -52297,6 +52390,7 @@ MonoBehaviour:
   triggerOffset: -2
   revealRadius: 8
   animationStateName: AlphaSpaceTextReveal
+  updateInterval: 0.1
 --- !u!95 &1345951589
 Animator:
   serializedVersion: 7
@@ -52982,6 +53076,7 @@ MonoBehaviour:
   triggerOffset: -0.23
   revealRadius: 3.64
   animationStateName: PositionTextReveal
+  updateInterval: 0.1
 --- !u!95 &1364777957
 Animator:
   serializedVersion: 7
@@ -54052,6 +54147,7 @@ MonoBehaviour:
   triggerOffset: -2
   revealRadius: 8
   animationStateName: AlphaSpaceTextReveal
+  updateInterval: 0.1
 --- !u!95 &1387950539
 Animator:
   serializedVersion: 7
@@ -54229,6 +54325,7 @@ MonoBehaviour:
   triggerOffset: -3.43
   revealRadius: 5.5
   animationStateName: AlphaTextReveal
+  updateInterval: 0.1
 --- !u!95 &1390603414
 Animator:
   serializedVersion: 7
@@ -55158,6 +55255,7 @@ MonoBehaviour:
   triggerOffset: -0.06
   revealRadius: 3.64
   animationStateName: AlphaTextReveal
+  updateInterval: 0.1
 --- !u!95 &1414992237
 Animator:
   serializedVersion: 7
@@ -55336,6 +55434,7 @@ MonoBehaviour:
   triggerOffset: -2
   revealRadius: 8
   animationStateName: AlphaSpaceTextReveal
+  updateInterval: 0.1
 --- !u!95 &1419857383
 Animator:
   serializedVersion: 7
@@ -55590,6 +55689,7 @@ MonoBehaviour:
   triggerOffset: -2
   revealRadius: 8
   animationStateName: AlphaSpaceTextReveal
+  updateInterval: 0.1
 --- !u!95 &1427035139
 Animator:
   serializedVersion: 7
@@ -55767,6 +55867,7 @@ MonoBehaviour:
   triggerOffset: -0.85
   revealRadius: 2.72
   animationStateName: AlphaTextReveal
+  updateInterval: 0.1
 --- !u!95 &1428036379
 Animator:
   serializedVersion: 7
@@ -56228,6 +56329,7 @@ MonoBehaviour:
   triggerOffset: -1.17
   revealRadius: 3.64
   animationStateName: AlphaTextReveal
+  updateInterval: 0.1
 --- !u!95 &1439502973
 Animator:
   serializedVersion: 7
@@ -56405,6 +56507,7 @@ MonoBehaviour:
   triggerOffset: -2
   revealRadius: 8
   animationStateName: AlphaSpaceTextReveal
+  updateInterval: 0.1
 --- !u!95 &1443352935
 Animator:
   serializedVersion: 7
@@ -56659,6 +56762,7 @@ MonoBehaviour:
   triggerOffset: -3.25
   revealRadius: 6.08
   animationStateName: AlphaTextReveal
+  updateInterval: 0.1
 --- !u!95 &1453054725
 Animator:
   serializedVersion: 7
@@ -57504,6 +57608,7 @@ MonoBehaviour:
   triggerOffset: -2
   revealRadius: 8
   animationStateName: AlphaSpaceTextReveal
+  updateInterval: 0.1
 --- !u!95 &1465139738
 Animator:
   serializedVersion: 7
@@ -57681,6 +57786,7 @@ MonoBehaviour:
   triggerOffset: -1.34
   revealRadius: 5.22
   animationStateName: AlphaTextReveal
+  updateInterval: 0.1
 --- !u!95 &1468831557
 Animator:
   serializedVersion: 7
@@ -58032,6 +58138,7 @@ MonoBehaviour:
   triggerOffset: -2
   revealRadius: 8
   animationStateName: AlphaSpaceTextReveal
+  updateInterval: 0.1
 --- !u!95 &1477991725
 Animator:
   serializedVersion: 7
@@ -58551,6 +58658,7 @@ MonoBehaviour:
   triggerOffset: 3.28
   revealRadius: 5
   animationStateName: AlphaTextReveal
+  updateInterval: 0.1
 --- !u!95 &1479845449
 Animator:
   serializedVersion: 7
@@ -58728,6 +58836,7 @@ MonoBehaviour:
   triggerOffset: -2
   revealRadius: 8
   animationStateName: AlphaSpaceTextReveal
+  updateInterval: 0.1
 --- !u!95 &1482051953
 Animator:
   serializedVersion: 7
@@ -58905,6 +59014,7 @@ MonoBehaviour:
   triggerOffset: 0
   revealRadius: 8
   animationStateName: AlphaTextReveal
+  updateInterval: 0.1
 --- !u!95 &1483666257
 Animator:
   serializedVersion: 7
@@ -59082,6 +59192,7 @@ MonoBehaviour:
   triggerOffset: 1.62
   revealRadius: 5.22
   animationStateName: AlphaTextReveal
+  updateInterval: 0.1
 --- !u!95 &1492097272
 Animator:
   serializedVersion: 7
@@ -59767,6 +59878,7 @@ MonoBehaviour:
   triggerOffset: -2
   revealRadius: 8
   animationStateName: AlphaSpaceTextReveal
+  updateInterval: 0.1
 --- !u!95 &1537257062
 Animator:
   serializedVersion: 7
@@ -60372,6 +60484,7 @@ MonoBehaviour:
   triggerOffset: -2
   revealRadius: 8
   animationStateName: AlphaSpaceTextReveal
+  updateInterval: 0.1
 --- !u!95 &1580057645
 Animator:
   serializedVersion: 7
@@ -61013,6 +61126,7 @@ MonoBehaviour:
   triggerOffset: -0.95
   revealRadius: 2.48
   animationStateName: AlphaTextReveal
+  updateInterval: 0.1
 --- !u!95 &1596955676
 Animator:
   serializedVersion: 7
@@ -61474,6 +61588,7 @@ MonoBehaviour:
   triggerOffset: -2
   revealRadius: 8
   animationStateName: AlphaSpaceTextReveal
+  updateInterval: 0.1
 --- !u!95 &1609369547
 Animator:
   serializedVersion: 7
@@ -61907,6 +62022,7 @@ MonoBehaviour:
   triggerOffset: 3.28
   revealRadius: 5
   animationStateName: AlphaTextReveal
+  updateInterval: 0.1
 --- !u!95 &1630889483
 Animator:
   serializedVersion: 7
@@ -62186,6 +62302,7 @@ MonoBehaviour:
   triggerOffset: -0.5
   revealRadius: 5.22
   animationStateName: AlphaTextReveal
+  updateInterval: 0.1
 --- !u!95 &1639298400
 Animator:
   serializedVersion: 7
@@ -62689,6 +62806,7 @@ MonoBehaviour:
   triggerOffset: -2
   revealRadius: 8
   animationStateName: AlphaSpaceTextReveal
+  updateInterval: 0.1
 --- !u!95 &1665964340
 Animator:
   serializedVersion: 7
@@ -63350,6 +63468,7 @@ MonoBehaviour:
   triggerOffset: 3.28
   revealRadius: 5
   animationStateName: AlphaTextReveal
+  updateInterval: 0.1
 --- !u!95 &1707096853
 Animator:
   serializedVersion: 7
@@ -63818,6 +63937,7 @@ MonoBehaviour:
   triggerOffset: 3.28
   revealRadius: 5
   animationStateName: AlphaTextReveal
+  updateInterval: 0.1
 --- !u!95 &1724611547
 Animator:
   serializedVersion: 7
@@ -64100,6 +64220,7 @@ MonoBehaviour:
   triggerOffset: -2
   revealRadius: 8
   animationStateName: AlphaSpaceTextReveal
+  updateInterval: 0.1
 --- !u!95 &1728436932
 Animator:
   serializedVersion: 7
@@ -64321,6 +64442,7 @@ MonoBehaviour:
   triggerOffset: -2
   revealRadius: 8
   animationStateName: AlphaSpaceTextReveal
+  updateInterval: 0.1
 --- !u!95 &1749655683
 Animator:
   serializedVersion: 7
@@ -65701,6 +65823,7 @@ MonoBehaviour:
   triggerOffset: -2
   revealRadius: 8
   animationStateName: AlphaSpaceTextReveal
+  updateInterval: 0.1
 --- !u!95 &1799411926
 Animator:
   serializedVersion: 7
@@ -66341,6 +66464,7 @@ MonoBehaviour:
   triggerOffset: -2
   revealRadius: 8
   animationStateName: AlphaSpaceTextReveal
+  updateInterval: 0.1
 --- !u!95 &1834291176
 Animator:
   serializedVersion: 7
@@ -66752,6 +66876,7 @@ MonoBehaviour:
   triggerOffset: -18.16
   revealRadius: 3
   animationStateName: AlphaMatShow
+  updateInterval: 0.1
 --- !u!95 &1859677908
 Animator:
   serializedVersion: 7
@@ -66830,6 +66955,7 @@ MonoBehaviour:
   triggerOffset: -1.54
   revealRadius: 3.5
   animationStateName: AlphaSpaceTextReveal
+  updateInterval: 0.1
 --- !u!95 &1861344077
 Animator:
   serializedVersion: 7
@@ -67646,6 +67772,7 @@ MonoBehaviour:
   triggerOffset: -2
   revealRadius: 8
   animationStateName: AlphaSpaceTextReveal
+  updateInterval: 0.1
 --- !u!95 &1889929334
 Animator:
   serializedVersion: 7
@@ -68126,6 +68253,7 @@ MonoBehaviour:
   triggerOffset: -2
   revealRadius: 8
   animationStateName: AlphaSpaceTextReveal
+  updateInterval: 0.1
 --- !u!95 &1899993364
 Animator:
   serializedVersion: 7
@@ -69256,6 +69384,7 @@ MonoBehaviour:
   triggerOffset: -2
   revealRadius: 8
   animationStateName: AlphaSpaceTextReveal
+  updateInterval: 0.1
 --- !u!95 &1926168487
 Animator:
   serializedVersion: 7
@@ -69438,6 +69567,7 @@ MonoBehaviour:
   triggerOffset: -2
   revealRadius: 8
   animationStateName: AlphaSpaceTextReveal
+  updateInterval: 0.1
 --- !u!95 &1935054452
 Animator:
   serializedVersion: 7
@@ -70381,6 +70511,7 @@ MonoBehaviour:
   triggerOffset: 0.24
   revealRadius: 3.94
   animationStateName: PositionTextReveal
+  updateInterval: 0.1
 --- !u!95 &1956480099
 Animator:
   serializedVersion: 7
@@ -70558,6 +70689,7 @@ MonoBehaviour:
   triggerOffset: -6.7
   revealRadius: 3.68
   animationStateName: PositionTextReveal
+  updateInterval: 0.1
 --- !u!95 &1966223838
 Animator:
   serializedVersion: 7
@@ -71031,6 +71163,7 @@ MonoBehaviour:
   triggerOffset: 0
   revealRadius: 7
   animationStateName: AlphaSpaceTextReveal
+  updateInterval: 0.1
 --- !u!95 &1980135986
 Animator:
   serializedVersion: 7
@@ -71736,6 +71869,7 @@ MonoBehaviour:
   triggerOffset: -2
   revealRadius: 8
   animationStateName: AlphaSpaceTextReveal
+  updateInterval: 0.1
 --- !u!95 &2002823090
 Animator:
   serializedVersion: 7
@@ -71913,6 +72047,7 @@ MonoBehaviour:
   triggerOffset: -0.96
   revealRadius: 3.64
   animationStateName: AlphaTextReveal
+  updateInterval: 0.1
 --- !u!95 &2004644995
 Animator:
   serializedVersion: 7
@@ -72146,6 +72281,7 @@ MonoBehaviour:
   triggerOffset: -2
   revealRadius: 8
   animationStateName: AlphaSpaceTextReveal
+  updateInterval: 0.1
 --- !u!95 &2008186623
 Animator:
   serializedVersion: 7
@@ -72836,6 +72972,7 @@ MonoBehaviour:
   triggerOffset: -6.7
   revealRadius: 3.68
   animationStateName: PositionTextReveal
+  updateInterval: 0.1
 --- !u!95 &2022633176
 Animator:
   serializedVersion: 7
@@ -73402,6 +73539,7 @@ MonoBehaviour:
   triggerOffset: 0
   revealRadius: 8
   animationStateName: AlphaTextReveal
+  updateInterval: 0.1
 --- !u!95 &2037359678
 Animator:
   serializedVersion: 7
@@ -73578,6 +73716,7 @@ MonoBehaviour:
   triggerOffset: 3.28
   revealRadius: 5
   animationStateName: AlphaTextReveal
+  updateInterval: 0.1
 --- !u!95 &2041140767
 Animator:
   serializedVersion: 7
@@ -74074,6 +74213,7 @@ MonoBehaviour:
   triggerOffset: -0.23
   revealRadius: 3.64
   animationStateName: PositionTextReveal
+  updateInterval: 0.1
 --- !u!95 &2064900131
 Animator:
   serializedVersion: 7
@@ -74248,7 +74388,6 @@ MonoBehaviour:
   showDebugGUI: 0
   speedZones: []
   animationZones: []
-  textZones: []
   fingersToScroll: 2
 --- !u!1 &2075684778
 GameObject:
@@ -74306,6 +74445,7 @@ MonoBehaviour:
   triggerOffset: -2
   revealRadius: 8
   animationStateName: AlphaSpaceTextReveal
+  updateInterval: 0.1
 --- !u!95 &2075684781
 Animator:
   serializedVersion: 7
@@ -74529,6 +74669,7 @@ MonoBehaviour:
   triggerOffset: 0
   revealRadius: 8
   animationStateName: AlphaTextReveal
+  updateInterval: 0.1
 --- !u!95 &2084078844
 Animator:
   serializedVersion: 7
@@ -75360,6 +75501,7 @@ MonoBehaviour:
   triggerOffset: -0.5
   revealRadius: 5.22
   animationStateName: AlphaTextReveal
+  updateInterval: 0.1
 --- !u!95 &2121767433
 Animator:
   serializedVersion: 7
@@ -75910,6 +76052,7 @@ MonoBehaviour:
   triggerOffset: -2
   revealRadius: 8
   animationStateName: AlphaSpaceTextReveal
+  updateInterval: 0.1
 --- !u!95 &2134343940
 Animator:
   serializedVersion: 7
